@@ -12,6 +12,7 @@
 		0011345A28E961FB00811AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0011345928E961FB00811AC5 /* Assets.xcassets */; };
 		0011345D28E961FB00811AC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0011345C28E961FB00811AC5 /* Preview Assets.xcassets */; };
 		0081492428E98D84002FC1D4 /* InfoPanelVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081492328E98D84002FC1D4 /* InfoPanelVew.swift */; };
+		0081492728E9C1DC002FC1D4 /* ControllImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081492628E9C1DC002FC1D4 /* ControllImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		0011345928E961FB00811AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0011345C28E961FB00811AC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0081492328E98D84002FC1D4 /* InfoPanelVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelVew.swift; sourceTree = "<group>"; };
+		0081492628E9C1DC002FC1D4 /* ControllImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		0011345428E961F800811AC5 /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
+				0081492528E9C1A0002FC1D4 /* Screens */,
 				0011346528E9626000811AC5 /* Model */,
 				0011346428E9625500811AC5 /* Data */,
 				0011346328E9624700811AC5 /* View */,
@@ -74,8 +77,8 @@
 		0011346328E9624700811AC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0011345728E961F800811AC5 /* ContentView.swift */,
 				0081492328E98D84002FC1D4 /* InfoPanelVew.swift */,
+				0081492628E9C1DC002FC1D4 /* ControllImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +95,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0081492528E9C1A0002FC1D4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0011345728E961F800811AC5 /* ContentView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0011345828E961F800811AC5 /* ContentView.swift in Sources */,
+				0081492728E9C1DC002FC1D4 /* ControllImageView.swift in Sources */,
 				0011345628E961F800811AC5 /* PinchApp.swift in Sources */,
 				0081492428E98D84002FC1D4 /* InfoPanelVew.swift in Sources */,
 			);
