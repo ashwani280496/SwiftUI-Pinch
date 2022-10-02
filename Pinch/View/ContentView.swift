@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
     @State private var isAnimating = false
     @State private var imageScale: CGFloat = 1
+    @State private var imageOffset = CGSize.zero
+    
+    // MARK: - Functions
+    
+    private func resetImageState() {
+        return withAnimation(.spring()) {
+            imageScale = 1
+            imageOffset = .zero
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -21,12 +32,31 @@ struct ContentView: View {
                     .padding()
                     .shadow(color: .white.opacity(0.5), radius: 12, x: 2, y: 10)
                     .opacity(isAnimating ? 1 : 0)
+                    .offset(imageOffset)
                     .scaleEffect(imageScale)
                     .onTapGesture(count: 2) {
                         withAnimation(.spring()) {
-                            imageScale = imageScale == 1 ? 5 : 1
+                            if imageScale == 1 {
+                                imageScale = 5
+                            } else {
+                                resetImageState()
+                            }
                         }
                     }
+                    .gesture(
+                        
+                        DragGesture()
+                            .onChanged { gesture in
+                                withAnimation(.linear(duration: 1)){
+                                    imageOffset = gesture.translation
+                                }
+                            }
+                            .onEnded { gesture in
+                                if imageScale <= 1{
+                                    resetImageState()
+                                }
+                            }
+                    )
                 
             }//: ZSTACK
             .navigationTitle("Zoom & Pich")
