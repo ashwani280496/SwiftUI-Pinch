@@ -71,6 +71,49 @@ struct ContentView: View {
                 InfoPanelVew(scale: imageScale, offset: imageOffset),
                 alignment: .top
             )
+            // MARK: - CONTROLLS
+            .overlay(
+                Group {
+                    HStack {
+                        Button {
+                            if imageScale > 1 {
+                                withAnimation(.spring()) {
+                                    imageScale -= 1
+                                }
+                                if imageScale == 1 {
+                                    resetImageState()
+                                }
+                            }
+                            
+                        } label: {
+                            ControllImageView(icon: "minus.magnifyingglass")
+                        }
+                        
+                        Button {
+                            resetImageState()
+                            
+                        } label: {
+                            ControllImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+                        }
+                        
+                        Button {
+                            if imageScale < 5{
+                                withAnimation(.spring()) {
+                                    imageScale += 1
+                                }
+                            }
+                        } label: {
+                            ControllImageView(icon: "plus.magnifyingglass")
+                        }
+                    }
+                    .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+                    .background(.thinMaterial)
+                    .cornerRadius(10)
+                    .opacity(isAnimating ? 1 : 0)
+                }.padding(30)
+                ,
+                alignment: .bottom
+            )
         } //: NavigationView
         
     }
