@@ -58,6 +58,17 @@ struct ContentView: View {
                                 }
                             }
                     )
+                    .gesture(
+                    MagnificationGesture()
+                        .onChanged({ value in
+                            withAnimation(.linear(duration: 1)) {
+                                if (1...5).contains(imageScale) {
+                                    imageScale = value
+                                }
+                                
+                            }
+                        })
+                    )
                 
             }//: ZSTACK
             .navigationTitle("Zoom & Pich")
