@@ -62,7 +62,10 @@ struct ContentView: View {
                     MagnificationGesture()
                         .onChanged({ value in
                             withAnimation(.linear(duration: 1)) {
-                                imageScale = value
+                                if (1...5).contains(imageScale) {
+                                    imageScale = value
+                                }
+                                
                             }
                         })
                     )
