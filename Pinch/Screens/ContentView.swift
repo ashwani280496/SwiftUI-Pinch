@@ -12,6 +12,12 @@ struct ContentView: View {
     @State private var isAnimating = false
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset = CGSize.zero
+    @State private var isDrawerOpened = false
+    
+    private let pages = pageData
+    
+    @State private var selectedPageIndex = 1
+    
     
     // MARK: - Functions
     
@@ -26,7 +32,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Color.clear
-                Image("magazine-front-cover")
+                Image(pageData[selectedPageIndex - 1].imageName)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(10)
@@ -62,15 +68,12 @@ struct ContentView: View {
                     MagnificationGesture()
                         .onChanged({ value in
                             withAnimation(.linear(duration: 1)) {
-                                if (1...5).contains(imageScale) {
-                                    imageScale = value
-                                }
-                                
+                                imageScale = (1...5).contains(imageScale) ? value : 5
                             }
                         })
                     )
                 
-            }//: ZSTACK
+            } //: ZSTACK
             .navigationTitle("Zoom & Pich")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
@@ -124,6 +127,46 @@ struct ContentView: View {
                 }.padding(30)
                 ,
                 alignment: .bottom
+            )
+            .overlay(
+                HStack(spacing: 12){
+                    Image(systemName: "chevron.compact.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40)
+                        .padding(8)
+                        .foregroundColor(.secondary)
+                        .onTapGesture {
+                            withAnimation {
+                                isDrawerOpened.toggle()
+                            }
+                        }
+                    
+                    ForEach(pages) { page in
+                        Image(page.thumnail)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                            .opacity(isDrawerOpened ? 1 : 0)
+                            .animation(.easeOut(duration: 2), value: isDrawerOpened)
+                            .onTapGesture {
+                               isAnimating = true
+                                selectedPageIndex = page.id
+                            }
+                    }
+                    Spacer()
+                }
+                    .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(16)
+                    .padding(.top, UIScreen.main.bounds.height / 12)
+                    .frame(width: 250)
+                    .offset(x: isDrawerOpened ? 20 : 215)
+                   
+                ,
+                alignment: .topTrailing
             )
         } //: NavigationView
         
