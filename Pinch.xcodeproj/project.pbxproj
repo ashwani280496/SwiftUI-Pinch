@@ -11,6 +11,8 @@
 		0011345828E961F800811AC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011345728E961F800811AC5 /* ContentView.swift */; };
 		0011345A28E961FB00811AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0011345928E961FB00811AC5 /* Assets.xcassets */; };
 		0011345D28E961FB00811AC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0011345C28E961FB00811AC5 /* Preview Assets.xcassets */; };
+		006B6BAA28EDE02900B2E89C /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B6BA928EDE02900B2E89C /* Page.swift */; };
+		006B6BAC28EDE06A00B2E89C /* PageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B6BAB28EDE06A00B2E89C /* PageData.swift */; };
 		0081492428E98D84002FC1D4 /* InfoPanelVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081492328E98D84002FC1D4 /* InfoPanelVew.swift */; };
 		0081492728E9C1DC002FC1D4 /* ControllImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081492628E9C1DC002FC1D4 /* ControllImageView.swift */; };
 /* End PBXBuildFile section */
@@ -21,6 +23,8 @@
 		0011345728E961F800811AC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0011345928E961FB00811AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0011345C28E961FB00811AC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		006B6BA928EDE02900B2E89C /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		006B6BAB28EDE06A00B2E89C /* PageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageData.swift; sourceTree = "<group>"; };
 		0081492328E98D84002FC1D4 /* InfoPanelVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelVew.swift; sourceTree = "<group>"; };
 		0081492628E9C1DC002FC1D4 /* ControllImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,7 @@
 		0011346428E9625500811AC5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				006B6BAB28EDE06A00B2E89C /* PageData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		0011346528E9626000811AC5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				006B6BA928EDE02900B2E89C /* Page.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				0081492728E9C1DC002FC1D4 /* ControllImageView.swift in Sources */,
 				0011345628E961F800811AC5 /* PinchApp.swift in Sources */,
 				0081492428E98D84002FC1D4 /* InfoPanelVew.swift in Sources */,
+				006B6BAC28EDE06A00B2E89C /* PageData.swift in Sources */,
+				006B6BAA28EDE02900B2E89C /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
